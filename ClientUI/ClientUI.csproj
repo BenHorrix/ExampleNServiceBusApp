@@ -52,5 +52,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Handlers\Handlers.csproj">
+      <Project>{f67b6999-0ad6-428b-9458-ab7d3c1b6158}</Project>
+      <Name>Handlers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Messages\Messages.csproj">
+      <Project>{ef7985a8-d829-45d9-81f0-caac0e87ee02}</Project>
+      <Name>Messages</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
