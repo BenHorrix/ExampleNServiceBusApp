@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common;
 using Messages.Messages;
 using NServiceBus;
 using NServiceBus.Logging;
@@ -27,8 +28,7 @@ namespace ClientUI
 
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
 
-            var endpointInstance = await Endpoint.Start(endpointConfiguration)
-                .ConfigureAwait(false);
+            var endpointInstance = await ServiceBusConfigurationHelper.ConfigureEndpoint("ClientUI");
 
             await RunLoop(endpointInstance)
                 .ConfigureAwait(false);
